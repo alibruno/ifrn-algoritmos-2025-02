@@ -3,22 +3,19 @@
 #include <cstdlib>
 
 int qtdListaContigDecrescente(int n, int a[]) {
-    int qtd = 1;
-    int qtdTemp = 1;
-    for (int i = 1; i < n; ++i) {
-        for (int j = i; j < n; ++j) {
-            if (a[j - 1] <= a[j]) {
-                qtdTemp++;
-                continue;
+    int qtd = 1;                    
+    int qtdTemp = 1;                
+    for (int i = 1; i < n; ++i) {   
+        if (a[i] >= a[i - 1]) {     
+            qtdTemp++;              
+            if (qtdTemp > qtd) {    
+                qtd = qtdTemp;      
             }
-            break;
+        } else {
+            qtdTemp = 1;            
         }
-        if (qtdTemp > qtd) {
-            qtd = qtdTemp;
-        }
-        qtdTemp = 1;
     }
-    return qtd;
+    return qtd;                     
 }
 
 int main() {
