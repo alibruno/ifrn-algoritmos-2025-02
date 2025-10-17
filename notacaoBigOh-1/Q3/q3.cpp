@@ -6,7 +6,7 @@ int maiorDifConsecutivo(int n, int a[]) {
     int maiorDif = abs(a[0] - a[1]);
     int difTemp;
     for (int i = 2; i < n; ++i) {
-        difTemp = abs(a[i-1] + a[i]);
+        difTemp = abs(a[i-1] - a[i]);
         if(difTemp > maiorDif){
             maiorDif = difTemp;
         }
